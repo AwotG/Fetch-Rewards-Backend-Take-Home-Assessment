@@ -2,7 +2,6 @@ from datetime import datetime, timedelta
 import pytest
 from PointsManagerHelper import PointManager, InsufficientPoints, InsufficientBalance
 
-#TODO: Give these tests another look over. Also add FastAPI tests
 def test_payer_total_does_not_go_negative():
     mngr = PointManager()
     payer = "DANNON"
@@ -107,16 +106,3 @@ def test_redeeming_points_returns_exception_if_insuffecient_balance():
     with pytest.raises(InsufficientBalance):
         mngr.redeem_points(amount*2)
 
-def test_redeem_points_successful_and_only_payers_in_order():
-    # mngr = PointManager()
-    # to_redeem = 300
-    # payer_name_one = "Dannon"
-    # payer_name_two = "Yoplait"
-    # payer_one = (payer_name_one, 100, datetime.now())
-    # payer_two = (payer_name_two, 100, datetime.now())
-    # mngr.add_points(*payer_one)
-    # mngr.add_points(*payer_two)
-    #
-    # with pytest.raises(InsufficientBalance):
-    #     mngr.redeem_points(to_redeem)
-    pass
